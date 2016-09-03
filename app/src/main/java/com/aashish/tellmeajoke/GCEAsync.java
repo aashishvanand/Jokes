@@ -42,8 +42,6 @@ public class GCEAsync extends AsyncTask<Void, Void, String> {
 
             myApiService = builder.build();
         }
-
-
         try {
             return myApiService.getJokeFromLib().execute().getData();
         } catch (IOException e) {

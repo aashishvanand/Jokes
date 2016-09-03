@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements GCEAsync.Callback
     public void onFinished(String result) {
         Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
         intent.putExtra("Joke",result);
+        String Product="Paid";
+        intent.putExtra("Product",Product);
         startActivity(intent);
     }
 }

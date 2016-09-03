@@ -23,13 +23,12 @@ import com.google.api.server.spi.config.ApiNamespace;
 )
 public class MyEndpoint {
 
-    /** A simple endpoint method that takes a joke from javalib */
+    /** A simple endpoint method that takes a free joke from javalib */
     @ApiMethod(name = "getJokeFromLib")
     public MyBean getJokeFromLibrary() {
         Joke joke = new Joke();
         MyBean response = new MyBean();
         response.setData(joke.getJoke());
-
         return response;
     }
 
