@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.aashish.Joke;
 import com.aashish.jokedisplay.DisplayActivity;
 
 public class MainActivity extends AppCompatActivity implements GCEAsync.Callback  {
@@ -34,10 +36,24 @@ public class MainActivity extends AppCompatActivity implements GCEAsync.Callback
 
     @Override
     public void onFinished(String result) {
-        Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
-        intent.putExtra("Joke",result);
-        String Product="Paid";
-        intent.putExtra("Product",Product);
-        startActivity(intent);
+        //if failed to connect to server load from internal library
+        if(result.equals("failed to connect to /10.0.0.2 (port 8080) after 20000ms"))
+        {
+            Joke joke = new Joke();
+            Toast.makeText(MainActivity.this, "Cannot connect to server loading jokes locally", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+            intent.putExtra("Joke", joke.getJoke());
+            String product = "Paid";
+            intent.putExtra("Product", product);
+            startActivity(intent);
+        }
+        //else load from GCE
+        else {
+            Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+            intent.putExtra("Joke", result);
+            String product = "Paid";
+            intent.putExtra("Product", product);
+            startActivity(intent);
+        }
     }
 }

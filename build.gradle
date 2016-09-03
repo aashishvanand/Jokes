@@ -21,3 +21,11 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+task runTests(dependsOn: [":backend:appengineRun",
+                          ":app:connectedAndroidTest",
+                          ":backend:appengineStop"]) {
+    doLast {
+        printLn "Testing Tasks Completed"
+    }
+}
