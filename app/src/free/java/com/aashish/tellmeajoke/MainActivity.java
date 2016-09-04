@@ -1,13 +1,12 @@
 package com.aashish.tellmeajoke;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.aashish.Joke;
 import com.aashish.jokedisplay.DisplayActivity;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -18,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements GCEAsync.Callback
 
     Button Tellajoke;
     InterstitialAd mInterstitialAd;
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity implements GCEAsync.Callback
         AdRequest adRequest1 = new AdRequest.Builder().build();
         mInterstitialAd.loadAd(adRequest1);
 
+        // Progress dialog
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+
 
         Tellajoke = (Button) findViewById(R.id.button_joke);
         Tellajoke.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements GCEAsync.Callback
                     mInterstitialAd.setAdListener(new AdListener() {
                         @Override
                         public void onAdClosed() {
+                            pDialog.setMessage("Loading");
+                            showDialog();
                             getFetchJoke();
                         }
                     });
@@ -61,9 +67,20 @@ public class MainActivity extends AppCompatActivity implements GCEAsync.Callback
         new GCEAsync(this).execute();
     }
 
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
+    }
+
 
     @Override
     public void onFinished(String result) {
+            hideDialog();
             Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
             intent.putExtra("Joke", result);
             String product = "Free";
