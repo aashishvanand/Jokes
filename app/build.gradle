@@ -18,7 +18,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors {
+    buildTypes.each {
+        it.buildConfigField 'String', 'Url', "\"https://joke-142409.appspot.com/_ah/api/\""
+    }
+
+        productFlavors {
         free {
             applicationId "com.aashish.jokes.free"
         }
