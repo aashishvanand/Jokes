@@ -64,25 +64,11 @@ public class MainActivity extends AppCompatActivity implements GCEAsync.Callback
 
     @Override
     public void onFinished(String result) {
-        //if failed to connect to server load from internal library
-        if(result.equals("failed to connect to /10.0.0.2 (port 8080) after 20000ms"))
-        {
-            Joke joke = new Joke();
-            Toast.makeText(MainActivity.this, "Cannot connect to server loading jokes locally", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
-            intent.putExtra("Joke", joke.getJoke());
-            String product = "Free";
-            intent.putExtra("Product", product);
-            startActivity(intent);
-        }
-        //else load from GCE
-        else {
             Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
             intent.putExtra("Joke", result);
             String product = "Free";
             intent.putExtra("Product", product);
             startActivity(intent);
-        }
     }
 
 }
