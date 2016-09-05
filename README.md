@@ -4,7 +4,7 @@ This is an Android app loads jokes from Google Cloud Endpoint and uses a seperat
 
 #Screenshots
 <img src="https://raw.githubusercontent.com/aashishvanand/Jokes/master/Screenshots/Screenshot_20160905-123906.png" height=480 width =270/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Jokes/master/Screenshots/Screenshot_20160905-123909.pnga" height=480 width =270/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Jokes/master/Screenshots/Screenshot_20160905-123909.png" height=480 width =270/>
 <img src="https://raw.githubusercontent.com/aashishvanand/Jokes/master/Screenshots/Screenshot_20160905-123914.png" height=480 width =270/>
 <img src="https://raw.githubusercontent.com/aashishvanand/Jokes/master/Screenshots/Screenshot_20160905-123921.png" height=480 width =270/>
 <img src="https://raw.githubusercontent.com/aashishvanand/Jokes/master/Screenshots/Screenshot_20160905-140147.png" height=480 width =270/>
