@@ -1,44 +1,30 @@
-# Flick
-Udacity Android Nanodegree - Popular Movies 2 - Exceeds Specifications <br>
-This is a Android app to show all your favourite movies, details and trailers based on several catagories like Rating, Popularity, Revenue, Now Playing and User Favourites.
-I have tried to implement the whole project on the material guidelines from google by using Material Colours, Material Cards.
+# Tell me a joke
+Udacity Android Nanodegree - Build it Bigger - Meets Specifications <br>
+This is an Android app loads jokes from Google Cloud Endpoint and uses a seperate java library to display the jokes. The app is divided into two Flavours Paid and the Free Version. Free Version loads banner ads and interstitial ads between activities. It has a dedicated Java library to supply jokes to the Google Cloud Endpoint (GCE).Project loads joke from GCE module via an AsyncTask.
 
 #Screenshots
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120912.png" height=480 width =270/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120925.png" height=480 width =270/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120956.png" height=480 width =270/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-121009.png" height=480 width =270/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-121051.png" height=480 width =270/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-121055.png" height=480 width =270/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-121106.png" height=480 width =270/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-121127.png" height=480 width =270/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_2016-03-27-21-15-42.png" />
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_2016-03-27-21-14-46.png"/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_2016-03-27-21-15-31.png"/>
-<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_2016-03-27-21-15-24.png"/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160905-123906.png" height=480 width =270/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160905-123909.pnga" height=480 width =270/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160905-123914.png" height=480 width =270/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160905-123921.png" height=480 width =270/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160905-140147.png" height=480 width =270/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160905-140200.png" height=480 width =270/>
 
 ## Features
 <ul style="list-style-type:disc">
-<li>Shows Movie Poster in a grid view based on user selection of the category.</li><br>
-<li>Used Fading action bar to show the backdrop of the movie selected</li><br>
-<li>Shows a review, Release Date, Rating and User Cretics.</li><br>
-<li>Opens Movie Trailers using Youtube APP (Should be pre-installed).</li><br>
-<li>Displays Additional info like Budget, Revenue, Original Language, Running Time, General, Production Companies, Tagline.</li><br>
-<li>Provides link to the movie's Website.</li><br>
-<li>Users can Favourite their movies using Favorites fab which saves the movie info locally so that it could be viewed offline.</li><br>
-<li>Share intent on the top shares the youtube trailer URL to share broadcaster.</li><br>
+<li>Project contains a Java library for supplying jokes.</li><br>
+<li>Project contains an Android library with an activity that displays jokes passed to it as intent extras.</li><br>
+<li>Project contains a Google Cloud Endpoints module that supplies jokes from the Java library. Project loads jokes from GCE module via an AsyncTask.</li><br>
+<li>Project contains connected tests to verify that the AsyncTask is indeed loading jokes.</li><br>
+<li>Project contains paid/free flavors. The paid flavor has no ads and no unnecessary dependencies.</li><br>
+<li>App retrieves jokes from Google Cloud Endpoints module and displays them via an Activity from the Android Library.</li><br>
+<li>Free app variant displays interstitial ads between the main activity and the joke-displaying activity.</li><br>
+<li>App display a loading indicator while the joke is being fetched from the server.</li><br>
+<li>Gradle task that starts the GCE dev server, runs all the Android tests, and shuts down the dev server.</li><br>
 </ul>
 
 ## Android Version Targeting
 Devices Running Lollipop (API 21) or above are supported
-
-## Other Remarks
-Make sure to add the API key from https://www.themoviedb.org/ to Build.gradle before compiling the project. Make sure you have compleSDK version of 23.0.2 installed in Android Studio
-
-##Libraries Used
-Picasso - http://square.github.io/picasso/ <br>
-Volley - http://developer.android.com/training/volley/index.html
 
 ##App is now available on Google Play
 <a href='https://play.google.com/store/apps/details?id=com.aashish.flick&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
