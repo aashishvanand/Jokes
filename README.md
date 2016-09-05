@@ -1,6 +1,6 @@
 # Tell me a joke
 Udacity Android Nanodegree - Build it Bigger - Meets Specifications <br>
-This is an Android app loads jokes from Google Cloud Endpoint and uses a seperate java library to display the jokes. The app is divided into two Flavours Paid and the Free Version. Free Version loads banner ads and interstitial ads between activities. It has a dedicated Java library to supply jokes to the Google Cloud Endpoint (GCE).Project loads joke from GCE module via an AsyncTask.
+This is an Android app loads jokes from Google Cloud Endpoint and uses a separate java library to display the jokes. The app is divided into two Flavours Paid and the Free Version. Free Version loads banner ads and interstitial ads between activities. It has a dedicated Java library to supply jokes to the Google Cloud Endpoint (GCE).Project loads joke from GCE module via an AsyncTask.
 
 #Screenshots
 <img src="https://raw.githubusercontent.com/aashishvanand/Jokes/master/Screenshots/Screenshot_20160905-123906.png" height=480 width =270/>
